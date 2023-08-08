@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene  background="color:white">
+        <a-camera position="0 1 14"></a-camera>
+        <a-assets timeout="10000">
+
+            
+          <a-asset-item id ="girl" src="./models/girl_speedsculpt/scene.gltf"></a-asset-item>
+            <a-asset-item id ="bench" src="./models/classic_park_bench_low_poly/scene.gltf"></a-asset-item>
+            <a-asset-item id="cat" src="./models/3d_modelling_my_cat_fripouille/"></a-asset-item>
+            <a-asset-item id="street_light" src="./models/street_light/scene.gltf"></a-asset-item>
+            <img id="bg" src="./images/bg.jpg">
+          </a-assets>
+         
+<a-sky color="gray"></a-sky>
+           <!-------------------------------------Lights in the scene---------------------------------------------
+           <a-entity light="type: point; color:#e6ca14; castShadow:true;position:-5.92951 8.39487 10.29438 intensity:1.1;">-->
+      
+ <!-------------------------------------Circular Plane----------------------------------------------->
+
+ <a-plane position="-0.4 -1.76 -5" rotation="-90 0 0" width="60" height="30" shadow="receive: true" visible="true"
+ color="black">
+</a-plane>
+
+<a-plane
+ id="wall-right"
+ src="./images/night.jpg"
+ position="4 12 -14"
+ rotation="0 0 0"
+ width="60"
+height="40"></a-plane>
+
+
+
+
+</a-entity>
+<a-entity light="type:ambient;" position="10 28 10"></a-entity>
+<a-entity light="type:directional; castShadow:true; intensity:1.6; distance: 20; decay:2;" color= "white" position="-9 12 20"></a-entity>
+<a-entity>
+<a-entity position="-1 0 7" gltf-model="#bench"  shadow="cast:true"></a-entity>
+</a-entity>
+
+<a-entity>
+  <a-entity position="-3 -1 8" gltf-model="#street_light"  shadow="cast:true" scale="0.25 0.28 0.05"></a-entity>
+  </a-entity>
+  <a-entity>
+    <a-entity position="-1 1.9 7" gltf-model="#girl"  shadow="cast:true" scale="2 2.4 2"></a-entity>
+    </a-entity>
+    <a-entity>
+      <a-entity position="2 3 9" gltf-model="#cat"  shadow="cast:true" scale="2 8 2"></a-entity>
+      </a-entity>
+
+    </a-scene>
+</body>
+</html>
